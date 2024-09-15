@@ -58,6 +58,8 @@ public class Stalagmites extends EarthAbility implements AddonAbility, ComboAbil
 	private double speed;
 	@Attribute(Attribute.RANGE)
 	private double range;
+	@Attribute(Attribute.DAMAGE)
+	private int baseDamage;
 	
 	private Location origin;
 	private Location location;
@@ -79,6 +81,7 @@ public class Stalagmites extends EarthAbility implements AddonAbility, ComboAbil
 		this.cooldown = ConfigManager.getConfig().getLong(path + "Cooldown");
 		this.speed = ConfigManager.getConfig().getDouble(path + "Speed");
 		this.range = ConfigManager.getConfig().getDouble(path + "Range");
+		this.baseDamage = ConfigManager.getConfig().getInt(path + "BaseDamage");
 
 		this.origin = player.getLocation().clone();
 		this.location = origin.clone();
@@ -131,7 +134,7 @@ public class Stalagmites extends EarthAbility implements AddonAbility, ComboAbil
 			if (!TempBlock.isTempBlock(top)) {
 				location.setY(top.getY() + 1);
 			}
-			trackEntities(location, e -> damage(e, 1, this));
+			trackEntities(location, e -> damage(e, baseDamage, this));
 
 			if (ThreadLocalRandom.current().nextInt(8) == 0) {
 				player.playSound(player.getLocation(), Sound.ENTITY_GHAST_SHOOT, 0.5F, 1F);
@@ -208,7 +211,7 @@ public class Stalagmites extends EarthAbility implements AddonAbility, ComboAbil
 		private Material material;
 		
 		@Attribute(Attribute.DAMAGE)
-		private double damage;
+		private double lavaDamage;
 		@Attribute(Attribute.SPEED)
 		private double speed;
 		@Attribute("RevertTime")
@@ -230,7 +233,7 @@ public class Stalagmites extends EarthAbility implements AddonAbility, ComboAbil
 			this.origin = location.clone();
 			this.material = material;
 			
-			this.damage = ConfigManager.getConfig().getDouble(path + "Damage");
+			this.lavaDamage = ConfigManager.getConfig().getDouble(path + "LavaDamage");
 			this.speed = ConfigManager.getConfig().getDouble(path + "Speed");
 			this.revert_time = ConfigManager.getConfig().getLong(path + "RevertTime");
 			this.knockback = ConfigManager.getConfig().getDouble(path + "Knockback");
@@ -321,7 +324,7 @@ public class Stalagmites extends EarthAbility implements AddonAbility, ComboAbil
 				if (isLavabendable(this.origin.getBlock()) || isLava(this.material) || this.material == Material.MAGMA_BLOCK) {
 					e.setFireTicks(50);
 				}
-				damage(e, this.damage, this.ability, true, this.destination, this.knockback);
+				damage(e, this.lavaDamage, this.ability, true, this.destination, this.knockback);
 				this.cleanup = true;
 			});
 			return true;

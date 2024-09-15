@@ -203,6 +203,8 @@ public class Loader extends ElementalAbility implements AddonAbility, Listener {
 		config.addDefault("ExtraAbilities.Prride.Stalagmites.MaxWidth", 4);
 		config.addDefault("ExtraAbilities.Prride.Stalagmites.MinHeight", 4);
 		config.addDefault("ExtraAbilities.Prride.Stalagmites.MaxHeight", 6);
+		config.addDefault("ExtraAbilities.Prride.Stalagmites.BaseDamage", 4);
+		config.addDefault("ExtraAbilities.Prride.Stalagmites.LavaDamage", 5);
 		
 		// MetalStrips
 		config.addDefault("ExtraAbilities.Prride.MetalStrips.Enabled", true);

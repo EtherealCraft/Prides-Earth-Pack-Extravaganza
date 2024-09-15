@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.pride</groupId>
-    <artifactId>earthset</artifactId>
+    <artifactId>EC-Pridees-earthset</artifactId>
     <version>3.0.0</version>
     <name>earthset</name>
 
@@ -20,6 +20,10 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -32,9 +36,9 @@
         </dependency>
         <!-- ProjectKorra -->
         <dependency>
-            <groupId>com.projectkorra</groupId>
-            <artifactId>projectkorra</artifactId>
-            <version>1.10.2</version>
+            <groupId>com.github.ProjectKorra</groupId>
+            <artifactId>ProjectKorra</artifactId>
+            <version>v1.10.2</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
