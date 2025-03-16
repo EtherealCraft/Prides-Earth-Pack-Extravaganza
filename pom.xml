@@ -36,9 +36,9 @@
         </dependency>
         <!-- ProjectKorra -->
         <dependency>
-            <groupId>com.github.ProjectKorra</groupId>
-            <artifactId>ProjectKorra</artifactId>
-            <version>v1.10.2</version>
+            <groupId>com.projectkorra</groupId>
+            <artifactId>projectkorra</artifactId>
+            <version>1.12.0-PRE-RELEASE-1</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

@@ -148,7 +148,7 @@ public class Loader extends ElementalAbility implements AddonAbility, Listener {
 	@Override
 	public String getName() { return "Loader"; }
 	@Override
-	public Element getElement() { return null; }
+	public Element getElement() { return Element.CHI; }
 	@Override
 	public Location getLocation() { return null; }
 	@Override
