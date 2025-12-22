@@ -86,7 +86,7 @@ public class Stalagmites extends EarthAbility implements AddonAbility, ComboAbil
 		this.origin = player.getLocation().clone();
 		this.location = origin.clone();
 		this.direction = player.getLocation().getDirection();
-		
+		if (Math.abs(this.direction.getX()) < 0.005 || Math.abs(this.direction.getZ()) < 0.005) return;
 		bPlayer.addCooldown(this);
 		
 		blockAbilities();

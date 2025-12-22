@@ -117,11 +117,11 @@ public class Loader extends ElementalAbility implements AddonAbility, Listener {
 	}
 	
 	public static String getAuthor(Element element) {
-		return element.getSubColor().getColor() + "" + ChatColor.UNDERLINE + "Prride";
+		return element.getColor() + "" + ChatColor.UNDERLINE + "Prride";
 	}
 	
 	public static String getVersion(Element element) {
-		return element.getSubColor().getColor() + "" + ChatColor.UNDERLINE + "VERSION 3";
+		return element.getColor() + "" + ChatColor.UNDERLINE + "VERSION 3";
 	}
 	
 	public static String getFallingBlocksKey() {
