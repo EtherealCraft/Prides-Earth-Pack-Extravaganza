@@ -323,8 +323,8 @@ public class Stalagmites extends EarthAbility implements AddonAbility, ComboAbil
 			trackEntities(this.location, e -> {
 				if (isLavabendable(this.origin.getBlock()) || isLava(this.material) || this.material == Material.MAGMA_BLOCK) {
 					e.setFireTicks(50);
+					damage(e, this.lavaDamage, this.ability, true, this.destination, this.knockback);
 				}
-				damage(e, this.lavaDamage, this.ability, true, this.destination, this.knockback);
 				this.cleanup = true;
 			});
 			return true;
